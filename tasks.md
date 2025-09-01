@@ -1,40 +1,33 @@
-# 🌦 Weather App — Pomodoro Task Plan
-
-Each ✅ = 1 Pomodoro (25 min)  
-Goal: ~13 Pomodoros (~6.5 hrs)
-
----
-
-## 🎨 Basic Layout & Mock UI — 4 Pomodoros (2 hrs)
+## 🎨 Basic Layout & Mock UI
 
 - [yes] Navbar layout (structure + Tailwind) ✅
-- [yes] Weather card skeleton with mock data ✅
-- [yes] Footer + layout polish ✅
-- [yes] Responsive grid/flex adjustments ✅
+- [x] Weather card skeleton with mock data ✅
+- [x] Footer + layout polish ✅
+- [x] Responsive grid/flex adjustments ✅
 
 ---
 
-## 📝 State & User Input — 3 Pomodoros (1.5 hrs)
+## 📝 State & User Input
 
-- [yes3] Create SearchBar component
-- [yes] Add `useState` to manage city input
-- [yes] Handle form submit via button or enter key
-- [yes] Validate empty input & prepare for api fetch
+- [x] Create SearchBar component ✅
+- [x] Add `useState` to manage city input ✅
+- [x] Handle form submit via button or enter key ✅
+- [x] Validate empty input & prepare for api fetch ✅
 
 ---
 
-### API Integration (Current Weather) — `2 hours`
+### API Integration (Current Weather)
 
-- [yes] Create `weatherService.js` and connect OpenWeatherMap API
-- [yes] Fetch weather data using Axios and `useEffect`
-- [yes] Display temperature, city, condition on WeatherCard
-- [yes] Handle loading
+- [x] Create `weatherService.js` and connect OpenWeatherMap API
+- [x] Fetch weather data using Axios and `useEffect`
+- [x] Display temperature, city, condition on WeatherCard
+- [x] Handle loading states and potential errors
 
-### Componentization — `2 hours`
+### Componentization
 
-- [x] Split into: `SearchBar`, `WeatherCard`, `ErrorDisplay`, `Loader`
+- [x] Split into: `SearchBar`, `WeatherCard`, `ErrorState`, `EmptyState`, `LoadingState`
 - [x] Pass data via props, manage state at `App.jsx` level
-- [x] Add skeleton loaders or animated spinner
+- [x] Add engaging animated loading state
 
 ---
 
@@ -50,3 +43,9 @@ Goal: ~13 Pomodoros (~6.5 hrs)
 - [x] Use `navigator.geolocation.getCurrentPosition()` ✅
 - [x] Fetch weather using lat/lon ✅
 - [x] Add “Use My Location” button ✅
+- [x] Implement a robust light/dark mode theme toggle ✅
+- [x] Centralize styling with a theme-aware class system (`tailwindClasses.js`) ✅
+- [x] Persist user's theme preference to Local Storage ✅
+- [x] Make the entire application fully responsive for all device sizes ✅
+- [x] Debug and fix UI inconsistencies (icon visibility, alignment, component sizing) ✅
+- [x] Refactor and clean up the codebase for production readiness ✅
