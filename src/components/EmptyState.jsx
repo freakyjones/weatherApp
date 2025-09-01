@@ -86,7 +86,7 @@ export function EmptyState({ onUseLocation, onCitySelect }) {
         <p className={`${classes.pLarge} max-w-md`}>
           Get instant weather updates for any city around the world
         </p>
-        <p className={`${classes.pBase} max-w-sm`}>
+        <p className={`${classes.pBase} max-w-md`}>
           Start by searching for a city or use your current location
         </p>
       </motion.div>
@@ -96,7 +96,7 @@ export function EmptyState({ onUseLocation, onCitySelect }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="mb-8"
+        className="mb-8 text-center"
       >
         <p className={`${classes.pBase} text-sm mb-4`}>
           Try searching for popular cities:
@@ -132,13 +132,9 @@ export function EmptyState({ onUseLocation, onCitySelect }) {
           Use My Location
         </Button>
 
-        <div className={`flex items-center gap-2 ${classes.textMuted}`}>
-          <span className="text-sm">or</span>
-          <div className="flex items-center gap-1">
-            <IoSearch className="h-4 w-4" />
-            <span className="text-sm">search for a city above</span>
-          </div>
-        </div>
+        <p className={`${classes.textMuted} text-sm`}>
+          or search for a city above
+        </p>
       </motion.div>
     </motion.div>
   );
