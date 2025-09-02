@@ -7,6 +7,7 @@ import { ErrorState } from "./components/ErrorState";
 import { EmptyState } from "./components/EmptyState";
 import { LoadingState } from "./components/LoadingState";
 import { AnimatePresence, motion } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useTheme } from "./context/ThemeContext";
 import {
   getWeatherData,
@@ -189,6 +190,7 @@ function App() {
         Made by <span className={classes.footerLink}>Freaky Jones</span> 🚀 with
         Gemini Code Assist
       </footer>
+      <SpeedInsights />
     </div>
   );
 }
