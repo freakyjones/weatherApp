@@ -7,7 +7,7 @@ import { ErrorState } from "./components/ErrorState";
 import { EmptyState } from "./components/EmptyState";
 import { LoadingState } from "./components/LoadingState";
 import { AnimatePresence, motion } from "framer-motion";
-import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { useTheme } from "./context/ThemeContext";
 import {
   getWeatherData,
   getWeatherDataByCoords,
@@ -15,7 +15,7 @@ import {
 } from "./services/weatherService";
 import { processForecastData } from "./utils/forecastUtils";
 
-const AppContent = () => {
+function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
@@ -190,14 +190,6 @@ const AppContent = () => {
         Gemini Code Assist
       </footer>
     </div>
-  );
-};
-
-function App() {
-  return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
   );
 }
 
