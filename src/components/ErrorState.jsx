@@ -124,9 +124,9 @@ export function ErrorState({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.3 }}
                 onClick={() => onCitySelect(city)}
-                className={classes.errorStateSuggestionButton}
+                className={`${classes.errorStateSuggestionButton} min-w-0`}
               >
-                <span className="font-medium">{city}</span>
+                <span className="font-medium truncate">{city}</span>
               </motion.button>
             ))}
           </div>
