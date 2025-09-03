@@ -14,7 +14,7 @@ const TEMP_WARM = 30;
 
 export default async function handler(req, res) {
   // Extract weather data from query parameters
-  const { temp, condition, wind = "0", humidity = "50" } = req.query;
+  const { temp, condition, wind = "0", humidity = "50", hour } = req.query;
 
   if (!temp || !condition) {
     return res
@@ -29,14 +29,20 @@ export default async function handler(req, res) {
     return sendFallbackResponse(res, temp);
   }
 
+  const timeOfDay =
+    hour && hour >= 5 && hour < 18 ? "daytime" : "evening/night";
+
   const prompt = `
-    You are a helpful and fashionable outfit recommender.
-    Based on the following weather conditions, suggest a concise, practical, and stylish outfit.
+    You are a helpful and stylish AI outfit recommender.
+    Your tone should be encouraging, friendly, and fashionable, but avoid overly familiar terms like "girl" or "darling".
+    Based on the following weather conditions, suggest a concise outfit.
+    - Time of day: ${timeOfDay}
     - Temperature: ${temp}°C
     - Condition: ${condition}
     - Wind: ${wind} km/h
     - Humidity: ${humidity}%
-    Keep the suggestion to one or two short, friendly sentences. Example: "It's chilly—wear a hoodie and jeans."
+    Keep the suggestion to one or two short sentences. Be creative!
+    Example: "A bit brisk out there! A cozy sweater and your favorite jeans would be perfect. Maybe add a beanie to complete the look."
   `;
 
   try {
@@ -89,6 +95,5 @@ function sendFallbackResponse(res, temp) {
   // We send a 200 OK status because the app can handle this "successful" fallback.
   return res
     .status(200)
-    .json({ outfit: fallbackOutfit, note: "Using fallback suggestion." })
-    .finally(() => console.log("--- Request Finished ---"));
+    .json({ outfit: fallbackOutfit, note: "Using fallback suggestion." });
 }

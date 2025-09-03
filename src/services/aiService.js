@@ -7,11 +7,13 @@ import axios from "axios";
  */
 export async function getOutfitSuggestion({ temp, condition, wind, humidity }) {
   try {
+    const currentHour = new Date().getHours();
     const params = {
       temp: Math.round(temp),
       condition,
       wind: Math.round(wind * 3.6), // m/s to km/h
       humidity,
+      hour: currentHour,
     };
     const response = await axios.get("/api/outfit", {
       params,
