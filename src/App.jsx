@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ForecastList from "./components/ForecastList";
 import WeatherDetailsCard from "./components/WeatherDetailsCard";
 import { ErrorState } from "./components/ErrorState";
+import OutfitSuggestionCard from "./components/OutfitSuggestionCard";
 import { EmptyState } from "./components/EmptyState";
 import { LoadingState } from "./components/LoadingState";
 import { AnimatePresence, motion } from "framer-motion";
@@ -167,6 +168,7 @@ function App() {
                   {forecastData && (
                     <ForecastList forecast={processedForecast} />
                   )}
+                  <OutfitSuggestionCard weather={weatherData} />
                   {weatherData && (
                     <div className={classes.weatherDetailsCardContainer}>
                       <WeatherDetailsCard
